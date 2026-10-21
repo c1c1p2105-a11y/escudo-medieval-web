@@ -1,0 +1,15 @@
+{
+  "objects": 4,
+  "materials": 4,
+  "triangles": 23679,
+  "vertices": 12328,
+  "height_m": 1.065,
+  "width_m": 0.79,
+  "textures": {
+    "wood": 1024,
+    "steel": 1024,
+    "bronze": 512,
+    "leather": 512
+  },
+  "glb_bytes": 7836820
+}

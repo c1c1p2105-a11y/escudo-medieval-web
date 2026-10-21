@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1c2622">
+  <meta name="description" content="Explora un escudo medieval en 3D. Roble, acero forjado y bronce: cuatro materiales PBR, una pieza interactiva.">
+  <title>Hierro y Roble · Escudo medieval interactivo</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 48'%3E%3Cpath fill='%231c2622' d='M20 1L38 7V24Q37 37 20 47Q3 37 2 24V7Z'/%3E%3Cpath stroke='%23c9a46b' stroke-width='3' d='M20 9V36M9 23H31'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="assets/model-viewer.min.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#explorar">Saltar al modelo</a>
+<header class="masthead">
+  <a class="brand" href="#inicio" aria-label="Hierro y Roble, inicio"><svg viewBox="0 0 32 38" aria-hidden="true"><path d="M16 2 29 7v13c0 7-6 12-13 16C9 32 3 27 3 20V7Z"/><path d="M16 8v20M8 18h16"/></svg><span>HIERRO <i>&</i> ROBLE</span></a>
+  <nav aria-label="Principal"><a href="#explorar">Explorar la pieza</a><a href="#proceso">El proceso <span>↗</span></a></nav>
+  <span class="edition">ESTUDIO DE OBJETO / 001</span>
+</header>
+<main id="inicio">
+  <section class="hero" id="explorar" aria-labelledby="hero-title">
+    <div class="story">
+      <p class="eyebrow"><span></span> ESCUDO MEDIEVAL · MODELO 3D</p>
+      <h1 id="hero-title">El carácter<br>de la <em>materia.</em></h1>
+      <p class="intro">Roble envejecido. Acero forjado. Bronce.<br>Una pieza inspirada en la artesanía medieval,<br class="wide"> recreada para explorar cada detalle.</p>
+      <div class="material-key" aria-label="Cuatro materiales"><span><i class="wood"></i>Roble</span><span><i class="steel"></i>Acero</span><span><i class="bronze"></i>Bronce</span><span><i class="leather"></i>Cuero</span></div>
+      <div class="controls">
+        <div class="control-heading"><h2>Hazlo tuyo</h2><span>3 CAMBIOS EN TIEMPO REAL</span></div>
+        <button id="steel" class="material-button" aria-pressed="false" disabled><span class="control-index">01</span><span><strong>Acabado del acero</strong><small id="steel-label">Forjado natural</small></span><span class="toggle" aria-hidden="true"></span></button>
+        <button id="wood" class="material-button" aria-pressed="false" disabled><span class="control-index">02</span><span><strong>Tono de la madera</strong><small id="wood-label">Roble cálido</small></span><span class="toggle" aria-hidden="true"></span></button>
+        <button id="bronze" class="material-button" aria-pressed="true" disabled><span class="control-index">03</span><span><strong>Relieve del bronce</strong><small id="bronze-label">Normal map activado</small></span><span class="toggle" aria-hidden="true"></span></button>
+        <div class="controls-bottom"><button id="reset" disabled>↺ Restablecer materiales</button><span id="status" role="status" aria-live="polite">Cargando pieza…</span></div>
+      </div>
+      <a class="download" href="assets/escudo_medieval.glb" download>Descargar modelo GLB <span>↓</span></a>
+    </div>
+    <div class="exhibit">
+      <div class="exhibit-top"><span>PIEZA / 001</span><span><i></i> VISOR INTERACTIVO</span></div>
+      <model-viewer id="shield" src="assets/escudo_medieval.glb" poster="assets/poster.jpg" alt="Escudo medieval puntiagudo con siete tablas de roble, marco y cruceta de acero, remaches de bronce y correas de cuero en el reverso" camera-controls touch-action="pan-y" camera-orbit="-12deg 84deg 2.6m" min-camera-orbit="auto 12deg 0.8m" max-camera-orbit="auto 165deg 3m" field-of-view="30deg" shadow-intensity="1" shadow-softness=".9" exposure="1" environment-image="neutral" interaction-prompt="auto" loading="eager" reveal="auto">
+        <div slot="progress-bar" class="progress"><span id="progress-fill"></span></div>
+      </model-viewer>
+      <div id="load-error" class="load-error" hidden>No se pudo cargar el modelo. <button onclick="location.reload()">Reintentar</button><a href="assets/escudo_medieval.glb">Descargar GLB</a></div>
+      <div class="exhibit-bottom"><span class="gesture">↔ Arrastra para girar <b>·</b> Acerca para ver el detalle</span><div class="view-controls"><button id="front" title="Ver frente" aria-label="Ver frente">Frente</button><button id="back" title="Ver reverso" aria-label="Ver reverso">Reverso</button></div></div>
+      <div class="specimen"><span>ESCUDO DE ROBLE</span><span>1.065 m · escala del modelo</span></div>
+    </div>
+  </section>
+  <section class="technical" aria-label="Datos del modelo"><div><strong id="triangles">—</strong><span>TRIÁNGULOS</span></div><div><strong>4</strong><span>MATERIALES PBR</span></div><div><strong>1K / 512</strong><span>RESOLUCIÓN DE TEXTURAS</span></div><div><strong id="filesize">—</strong><span>GLB AUTOCONTENIDO</span></div></section>
+  <section class="process" id="proceso" aria-labelledby="process-title">
+    <div class="process-title"><p class="eyebrow">DE LA REFERENCIA A LA WEB</p><h2 id="process-title">Hecho de detalles.<br><em>Pensado para tiempo real.</em></h2><p>La silueta, los refuerzos ornamentales y los remaches se construyen en geometría. Las vetas, poros y marcas finas viven en las texturas.</p></div>
+    <ol class="process-steps"><li><span>01</span><div><h3>Forma y construcción</h3><p>Siete tablas, marco continuo y herrajes con bordes suavizados. El reverso incluye dos correas de cuero.</p></div></li><li><span>02</span><div><h3>Superficies con intención</h3><p>UVs y mapas Base Color, Roughness, Metallic y Normal. Texturas originales de 1024 y 512 px; rugosidad y metalicidad empaquetadas para web.</p></div></li><li><span>03</span><div><h3>Una pieza que responde</h3><p>Exportación GLB y controles de materiales con <a href="https://modelviewer.dev/examples/scenegraph/" target="_blank" rel="noopener">Google model-viewer ↗</a>. Explora el frente, el canto y los agarres.</p></div></li></ol>
+  </section>
+  <section class="render-gallery" aria-label="Renders de estudio"><figure><img src="assets/render-frontal.jpg" alt="Render de estudio del frente del escudo" loading="lazy"><figcaption>01 / FRENTE <span>Construcción y herrajes</span></figcaption></figure><figure><img src="assets/render-reverso.jpg" alt="Render de estudio del reverso con dos correas de cuero" loading="lazy"><figcaption>02 / REVERSO <span>Grosor y agarres</span></figcaption></figure></section>
+</main>
+<footer><span>HIERRO & ROBLE <i>—</i> Proyecto personal de modelado 3D</span><a href="https://modelviewer.dev/" target="_blank" rel="noopener">Construido con model-viewer ↗</a></footer>
+</body></html>
